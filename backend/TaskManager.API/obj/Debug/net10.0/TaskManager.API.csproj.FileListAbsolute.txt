@@ -32,3 +32,4 @@ C:\Project\task-manager-fullstack\backend\TaskManager.API\obj\Debug\net10.0\refi
 C:\Project\task-manager-fullstack\backend\TaskManager.API\obj\Debug\net10.0\TaskManager.API.pdb
 C:\Project\task-manager-fullstack\backend\TaskManager.API\obj\Debug\net10.0\TaskManager.API.genruntimeconfig.cache
 C:\Project\task-manager-fullstack\backend\TaskManager.API\obj\Debug\net10.0\ref\TaskManager.API.dll
+C:\Project\task-manager-fullstack\backend\TaskManager.API\obj\Debug\net10.0\TaskManager.API.sourcelink.json

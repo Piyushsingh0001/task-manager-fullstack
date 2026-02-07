@@ -11,4 +11,8 @@ export class TaskService {
   getTasks() {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  addTask(title: string) {
+    return this.http.post(this.apiUrl, { title });
+  }
 }

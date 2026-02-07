@@ -18,4 +18,15 @@ public class TasksController : ControllerBase
     {
         return Ok(Tasks);
     }
+
+    [HttpPost]
+    public IActionResult AddTask([FromBody] TaskItem task)
+    {
+        task.Id = Tasks.Count + 1;
+        task.IsCompleted = false;
+
+        Tasks.Add(task);
+
+        return Ok(task);
+    }
 }

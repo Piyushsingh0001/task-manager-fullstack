@@ -1,16 +1,22 @@
 <div class="container">
   <h1>Task Manager</h1>
 
+  <div class="add-task">
+    <input
+      type="text"
+      placeholder="Enter new task"
+      [(ngModel)]="newTaskTitle"
+    />
+    <button (click)="addTask()">Add</button>
+  </div>
+
   <div *ngIf="isLoading">Loading tasks...</div>
 
-  <ul *ngIf="!isLoading">
+  <ul>
     <li *ngFor="let task of tasks">
       <span [class.done]="task.isCompleted">
         {{ task.title }}
       </span>
-      <small>
-        {{ task.isCompleted ? 'Completed' : 'Pending' }}
-      </small>
     </li>
   </ul>
 </div>

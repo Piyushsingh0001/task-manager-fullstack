@@ -8,5 +8,21 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskManager.API.Controllers.TasksController",
+    "Method": "AddTask",
+    "RelativePath": "api/Tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "task",
+        "Type": "TaskManager.API.Models.TaskItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
