@@ -3,23 +3,25 @@ import { TaskService } from './services/task.service';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <h1>Task Manager</h1>
-    <ul>
-      <li *ngFor="let task of tasks">
-        {{ task.title }} - {{ task.isCompleted ? 'Done' : 'Pending' }}
-      </li>
-    </ul>
-  `
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
 export class AppComponent implements OnInit {
   tasks: any[] = [];
+  isLoading = true;
 
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
-    this.taskService.getTasks().subscribe(data => {
-      this.tasks = data;
+    this.taskService.getTasks().subscribe({
+      next: (data) => {
+        this.tasks = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.isLoading = false;
+      }
     });
   }
 }

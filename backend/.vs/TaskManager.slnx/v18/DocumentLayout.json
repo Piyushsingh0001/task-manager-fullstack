@@ -42,8 +42,7 @@
               "RelativeToolTip": "TaskManager.API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-07T03:19:41.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T03:19:41.504Z"
             },
             {
               "$type": "Document",
@@ -53,7 +52,7 @@
               "RelativeDocumentMoniker": "TaskManager.API\\Controllers\\TasksController.cs",
               "ToolTip": "C:\\Project\\task-manager-fullstack\\backend\\TaskManager.API\\Controllers\\TasksController.cs",
               "RelativeToolTip": "TaskManager.API\\Controllers\\TasksController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAADwvxAAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-07T03:17:39.366Z",
               "EditorCaption": ""
@@ -68,21 +67,19 @@
               "RelativeToolTip": "TaskManager.API\\Models\\TaskItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T03:17:11.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T03:17:11.136Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TaskManager.API",
+              "Title": "TaskManager.API.csproj",
               "DocumentMoniker": "C:\\Project\\task-manager-fullstack\\backend\\TaskManager.API\\TaskManager.API.csproj",
               "RelativeDocumentMoniker": "TaskManager.API\\TaskManager.API.csproj",
               "ToolTip": "C:\\Project\\task-manager-fullstack\\backend\\TaskManager.API\\TaskManager.API.csproj",
               "RelativeToolTip": "TaskManager.API\\TaskManager.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-07T03:16:00.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T03:16:00.78Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "TaskManager.API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T03:14:18.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T03:14:18.037Z"
             }
           ]
         }
