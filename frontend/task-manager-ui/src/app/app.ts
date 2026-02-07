@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from './services/task.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
-   imports: [FormsModule],
   styleUrls: ['./app.css']
 })
 export class AppComponent implements OnInit {
@@ -26,12 +28,48 @@ export class AppComponent implements OnInit {
     });
   }
 
-  addTask() {
-    if (!this.newTaskTitle.trim()) return;
+addTask() {
+  if (!this.newTaskTitle.trim()) return;
 
-    this.taskService.addTask(this.newTaskTitle).subscribe(() => {
+  this.taskService.addTask(this.newTaskTitle).subscribe({
+    next: (createdTask: any) => {
+      // ✅ Optimistic update
+      this.tasks = [...this.tasks, createdTask];
       this.newTaskTitle = '';
-      this.loadTasks(); // refresh list
-    });
-  }
+    },
+    error: err => {
+      console.error('Add task failed', err);
+    }
+  });
+}
+completeTask(task: any) {
+  this.taskService.completeTask(task.id).subscribe({
+    next: () => {
+      // ✅ Optimistic UI update
+      task.isCompleted = true;
+    },
+    error: err => {
+      console.error('Complete task failed', err);
+    }
+  });
+}
+
+undoTask(task: any) {
+  this.taskService.undoTask(task.id).subscribe(() => {
+    task.isCompleted = false;
+  });
+}
+deleteTask(task: any) {
+  this.taskService.deleteTask(task.id).subscribe({
+    next: () => {
+      // ✅ Optimistic removal
+      this.tasks = this.tasks.filter(t => t.id !== task.id);
+    },
+    error: err => {
+      console.error('Delete task failed', err);
+    }
+  });
+}
+
+
 }

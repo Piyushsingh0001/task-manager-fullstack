@@ -15,4 +15,18 @@ export class TaskService {
   addTask(title: string) {
     return this.http.post(this.apiUrl, { title });
   }
+
+  toggleTask(id: number) {
+  return this.http.put(`${this.apiUrl}/${id}`, {});
+}
+deleteTask(id: number) {
+  return this.http.delete(`${this.apiUrl}/${id}`);
+}
+completeTask(id: number) {
+  return this.http.put(`${this.apiUrl}/${id}/complete`, {});
+}
+undoTask(id: number) {
+  return this.http.put(`${this.apiUrl}/${id}/undo`, {});
+}
+
 }

@@ -29,4 +29,46 @@ public class TasksController : ControllerBase
 
         return Ok(task);
     }
+    [HttpPut("{id}")]
+    public IActionResult UpdateTaskStatus(int id)
+    {
+        var task = Tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+            return NotFound();
+
+        task.IsCompleted = !task.IsCompleted;
+        return Ok(task);
+    }
+    [HttpPut("{id}/complete")]
+    public IActionResult CompleteTask(int id)
+    {
+        var task = Tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+            return NotFound();
+
+        task.IsCompleted = true;
+
+        return Ok(task);
+    }
+    [HttpPut("{id}/undo")]
+    public IActionResult UndoCompleteTask(int id)
+    {
+        var task = Tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+            return NotFound();
+
+        task.IsCompleted = false;
+        return Ok(task);
+    }
+    [HttpDelete("{id}")]
+    public IActionResult DeleteTask(int id)
+    {
+        var task = Tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+            return NotFound();
+
+        Tasks.Remove(task);
+        return NoContent();
+    }
+
 }

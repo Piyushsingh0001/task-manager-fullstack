@@ -10,13 +10,51 @@
     <button (click)="addTask()">Add</button>
   </div>
 
-  <div *ngIf="isLoading">Loading tasks...</div>
+  <div *ngIf="isLoading" class="loading">Loading tasks...</div>
 
-  <ul>
-    <li *ngFor="let task of tasks">
-      <span [class.done]="task.isCompleted">
-        {{ task.title }}
-      </span>
-    </li>
-  </ul>
+  <div class="task-list">
+    <div
+      class="task-card"
+      *ngFor="let task of tasks"
+      [class.completed]="task.isCompleted"
+    >
+      <div class="task-header">
+        <h3>📌 {{ task.title }}</h3>
+        <span class="status">
+          {{ task.isCompleted ? 'Completed' : 'Pending' }}
+        </span>
+      </div>
+
+      <p class="description" *ngIf="task.description">
+        {{ task.description }}
+      </p>
+
+      <small class="date">
+        Created: {{ task.createdAt | date:'mediumDate' }}
+      </small>
+
+   <div class="actions">
+  <button
+    class="complete-btn"
+    *ngIf="!task.isCompleted"
+    (click)="completeTask(task)"
+  >
+    Complete
+  </button>
+
+  <button
+    class="undo-btn"
+    *ngIf="task.isCompleted"
+    (click)="undoTask(task)"
+  >
+    Undo
+  </button>
+  <button class="delete-btn" (click)="deleteTask(task)">
+  Delete
+</button>
+
+</div>
+
+    </div>
+  </div>
 </div>
